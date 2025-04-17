@@ -12,8 +12,8 @@
 
 ### Ecossistema do MongoDB
 
-<img src="imgs\s1\s1-1.png" width=600 height=300 >
-<img src="imgs\s1\s1-2.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-1.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-2.png" width=600 height=300 >
 
 
 ## 1.2. What is MongoDB?
@@ -24,8 +24,8 @@ O nome MongoDB tem origem na palavra "homongous" ("enorme", em inglês), pois fo
 - O armazenamento das mensagens nos documentos são no formato JSON (BSON).
 - BSON é uma versão binária das informações (o mongoDB converte as informações JSON para BSON de forma transparente ao usuário).
 
-<img src="imgs\s1\s1-3.png" width=600 height=300 >
-<img src="imgs\s1\s1-4.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-3.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-4.png" width=600 height=300 >
 
 
 ## 1.3. The key MongoDB characteristics (and how it differs from SQL databases)
@@ -34,13 +34,13 @@ Ao invés de seguir a linha de raciocínio de databases SQL onde todas as inform
 
 Isso significa que um **documento** pode possuir uma quantidade de informações bastante diferente de outros.
 
-<img src="imgs\s1\s1-5.png" width=600 height=200 >
+<img src="..\imgs\s1\s1-5.png" width=600 height=200 >
 
 ### 1.3.1. Relations
 
 Podem não haver relações, ou pode-se ter poucas relações…
 
-<img src="imgs\s1\s1-6.png" width=500 height=150 >
+<img src="..\imgs\s1\s1-6.png" width=500 height=150 >
 
 - Você tem menos tabelas, menos coisas para conectar, e ao invés disto você armazena os dados já juntos, e é isso que traz **eficiência** para algumas aplicações.
 - Quando o MongoDB está buscando os dados, ele não precisa ir até a "_collection_ 1", mergear com a "_collection_ 2" e com a "_collection_ 3". Ao invés disto, ele navega até a "_collection_ A" e de forma rápida e eficaz, encontra o documento necessário e já tem todas as informações necessárias ali, sem precisar realizar junções de tabelas.
@@ -52,7 +52,7 @@ Podem não haver relações, ou pode-se ter poucas relações…
 - Compass → GUI
 - BI Connectors & MongoDB Charts → Tools for Data Scientists
 
-<img src="imgs\s1\s1-7.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-7.png" width=600 height=300 >
 
 ## 1.5. General setup instructions & Windows Installation
 
@@ -62,25 +62,25 @@ Podem não haver relações, ou pode-se ter poucas relações…
 
 1. Navegar para a aba Products → Try Community Edition (Download) → Selecionar a versão corrente do Windows com pacote '_msi_'
 
-    <img src="imgs\s1\s1-8.png" width=350 height=200 >
+    <img src="..\imgs\s1\s1-8.png" width=350 height=200 >
 
 2. Após download, procurar o arquivo na máquina local e iniciar a instalação
 3. Aceitar os "Termos de Instalação"
 4. Escolher a opção **Custom Setup**
 
-    <img src="imgs\s1\s1-9.png" width=400 height=300 >
+    <img src="..\imgs\s1\s1-9.png" width=400 height=300 >
 
 5. "**Install MongoD as a Service**" faz com que a aplicação rode em segundo plano toda vez que a máquina é inicializada. É possível pausar, parar e reiniciar manualmente, mas esta opção automaticamente inicia o serviço ao início da máquina de instalação.
 6. **Data Directory**: é onde os arquivos de dados serão armazenados.
 7. **Log Directory**: é onde os metadados de logs serão armazenados.
 
-    <img src="imgs\s1\s1-10.png" width=400 height=300 >
+    <img src="..\imgs\s1\s1-10.png" width=400 height=300 >
 
 8. Manter o _flag_ "**Install MongoDB Compass**"
 9. Após a instalação, ao navegar para "Services", é possível ver o programa MongoDB em execução por padrão.
     - Se o serviço estiver "pausado" ou "parado", não é possível interagir ou enviar comandos para o MongoDB.
 
-    <img src="imgs\s1\s1-11.png" width=1500 height=200 >
+    <img src="..\imgs\s1\s1-11.png" width=1500 height=200 >
 
 - Uma forma alternativa de "iniciar" e "parar" o serviço é através do _prompt_ de comando:
 
@@ -91,7 +91,7 @@ Podem não haver relações, ou pode-se ter poucas relações…
 
 - Na pasta "_bin_" deve haver o executável "**mongo.exe**" que é utilizado para iniciar o "*client*" (o shell interativo que nos permite interagir com o servidor)
 
-    <img src="imgs\s1\s1-13.png" width=500 height=200 >
+    <img src="..\imgs\s1\s1-13.png" width=500 height=200 >
 
 ### 1.5.2. Error Diagnosis
 
@@ -111,7 +111,7 @@ Podem não haver relações, ou pode-se ter poucas relações…
     - o comando `mongosh` executa uma conexão local.
     - o comando `show dbs` exibe os databases _default_.
 
-    <img src="imgs\s1\s1-14.png" width=600 height=350 >
+    <img src="..\imgs\s1\s1-14.png" width=600 height=350 >
 
 ## 1.6 Installing MongoDB Shell
 
@@ -141,7 +141,7 @@ It's a tool / local command which we will occasionally use in this course to im
 - Para criar uma nova coleção em um _database_, use o comando `db.<collection>.insertOne({})` → `db.products.insertOne( {name: “A Book”, price: 12.99} )`
 - O _prompt_ retornará uma mensagem, seja para informar um erro ou o sucesso da criação (com o ID único):
 
-    <img src="imgs\s1\s1-15.png" width=600 height=400 >
+    <img src="..\imgs\s1\s1-15.png" width=600 height=400 >
 
 - Retorna todos os arquivos presentes na coleção → `db.products.find()`
 
@@ -152,14 +152,14 @@ It's a tool / local command which we will occasionally use in this course to im
 
 ## 1.10 MongoDB + Clients: The big picture
 
-<img src="imgs\s1\s1-16.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-16.png" width=600 height=300 >
 
-<img src="imgs\s1\s1-17.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-17.png" width=600 height=300 >
 
 ## 1.11 Course outline
 
-<img src="imgs\s1\s1-18.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-18.png" width=600 height=300 >
 
 ## 1.12 How to get most of the course
 
-<img src="imgs\s1\s1-19.png" width=600 height=300 >
+<img src="..\imgs\s1\s1-19.png" width=600 height=300 >

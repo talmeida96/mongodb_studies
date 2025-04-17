@@ -18,7 +18,7 @@
 - Cada _database_ pode ter 1 ou mais "`collections`" → equivalente às tabelas em SQL DBs
 - Dentro das "`collections`" temos múltiplos "`documents`" → são os dados que são armazenados no banco
 
-    <img src="imgs\s2\s2-1.png" width=600 height=300 >
+    <img src="..\imgs\s2\s2-1.png" width=600 height=300 >
 
 - Todos esses conteúdos são criados automaticamente/implicitamente quando se começa a criar os dados para armazenar
 - É possível criar explicitamente os conteúdos (o que permite configurá-los mais profundamente)
@@ -39,7 +39,7 @@
 - O comando `show dbs` exibe todos os databases existentes dentro do MongoDB Server conectado
 - O comando `use <database-name>` altera para um database existente ou cria o database com o nome utilizado
 
-    <img src="imgs\s2\s2-2.png" width=300 height=200 >
+    <img src="..\imgs\s2\s2-2.png" width=300 height=200 >
 
 - Apesar de navegarmos para o database "**flights**" do exemplo acima utilizando o `use flights`, ao usar o `use dbs` ele não aparece. Isso ocorre porque ele só será definitivamente criado quando iniciarmos a inserção de dados nele.
 - `db.collection.insertOne({})` → `db.flightData.insertOne({})`
@@ -71,7 +71,7 @@
 ]
 ```
 
-<img src="imgs\s2\s2-3.png" width=300 height=200 >
+<img src="..\imgs\s2\s2-3.png" width=300 height=200 >
 
 - Todo documento criado recebe um **ID ÚNICO**
 
@@ -79,20 +79,20 @@
 
 - BSON → Binary Json
 
-<img src="imgs\s2\s2-4.png" width=500 height=200 >
+<img src="..\imgs\s2\s2-4.png" width=500 height=200 >
 
 - O `_id` pode ser inserido manualmente, desde que se garanta que ele será ÚNICO
 
-<img src="imgs\s2\s2-5.png" width=550 height=300 >
+<img src="..\imgs\s2\s2-5.png" width=550 height=300 >
 
 ## 2.7 Create, Read, Update, Delete (CRUD) & MongoDB
 
-<img src="imgs\s2\s2-6.png" width=600 height=300 >
+<img src="..\imgs\s2\s2-6.png" width=600 height=300 >
 
-<img src="imgs\s2\s2-7.png" width=600 height=250 >
+<img src="..\imgs\s2\s2-7.png" width=600 height=250 >
 
 ### Exemplo 1:
-<img src="imgs\s2\s2-8.png" width=600 height=300 >
+<img src="..\imgs\s2\s2-8.png" width=600 height=300 >
 
 ## 2.8. Finding, Inserting, Deleting and Updating elements
 
@@ -101,7 +101,7 @@
 - `db.<collection-name>.deleteOne({})` → `db.flightData.deleteOne({departureAirport: “TXL”})` → deleta a primeira aparição de documento cujo campo "departureAirport" possui o valor "TXL"
 - É possível realizar deletes à partir do filtro de qualquer campo existente no documento
 
-    <img src="imgs\s2\s2-9.png" width=600 height=450 >
+    <img src="..\imgs\s2\s2-9.png" width=600 height=450 >
 
 ``` javascript
 db.<collection-name>.updateOne({ "filtro-para-documento": "valor do filtro" }, { $set: { "como-será-alterado" } })
@@ -110,7 +110,7 @@ db.flightData.updateOne({ distance: 12000 }, { `$set`: { marker: “delete” } 
 ```
 - `$set` → reservado pelo MongoDB para indicar operadores que descrevem a alteração que se deseja realizar
 
-    <img src="imgs\s2\s2-10.png" width=600 height=450 >
+    <img src="..\imgs\s2\s2-10.png" width=600 height=450 >
 
 ``` javascript
 db.<collection-name>.updateMany({ "filtro-para-documento": "valor do filtro" }, { $set: { "como-será-alterado" } })
@@ -120,7 +120,7 @@ db.flightData.updateMany({}, { $set: { marker: "toDelete" } })
 
 - É possível deixar o campo de `"filtro-para-documento"` vazio, e desta forma as alterações abrangeram todos os documentos desta coleção. O mesmo vale para o `deleteMany()`
 
-    <img src="imgs\s2\s2-11.png" width=600 height=450 >
+    <img src="..\imgs\s2\s2-11.png" width=600 height=450 >
 
 ``` javascript
 db.<collection-name>.deleteMany( { "filtro-para-documento": "valor do filtro" })
@@ -128,7 +128,7 @@ db.<collection-name>.deleteMany( { "filtro-para-documento": "valor do filtro" })
 db.flightData.deleteMany( {marker: "toDelete"} )
 ``` 
 
-<img src="imgs\s2\s2-12.png" width=300 height=120 >
+<img src="..\imgs\s2\s2-12.png" width=300 height=120 >
 
 ## 2.9. Understanding "insertMany()"
 
@@ -155,7 +155,7 @@ db.flightData.deleteMany( {marker: "toDelete"} )
 ]
 ```
 
-<img src="imgs\s2\s2-13.png" width=450 height=300 >
+<img src="..\imgs\s2\s2-13.png" width=450 height=300 >
 
 ## 2.10. Diving deeper into finding data
 
@@ -190,7 +190,7 @@ db.flightData.replaceOne({
     "intercontinental": true
   })
 ```
-<img src="imgs\s2\s2-14.png" width=550 height=600 >
+<img src="..\imgs\s2\s2-14.png" width=550 height=600 >
 
 ## 2.12. Understanding "find()" and the cursor object
 
@@ -291,7 +291,7 @@ db.passengers.insertMany(  [
 
 - O `.find()` não nos retorna todos os documentos de uma coleção, mas sim um "_cursor object_"
 
-    <img src="imgs\s2\s2-15.png" width=400 height=200 >
+    <img src="..\imgs\s2\s2-15.png" width=400 height=200 >
 
 ---
 
@@ -320,25 +320,25 @@ db.passengers.insertMany(  [
 > 
 > `<value>` may be `0` (or `false`) to exclude the field, or `1` (or `true`) to include it. With the exception of the `_id` field, you may not have both inclusions and exclusions in the same projection document.
 
-<img src="imgs\s2\s2-16.png" width=600 height=400 >
+<img src="..\imgs\s2\s2-16.png" width=600 height=400 >
 
 - `db.passengers.find({}, {name: 1})`
     - o primeiro campo fica vazio pq se quer todos os resultados, sem filtros. 
     - o segundo campo é quais informações do documento se quer ver.
 
-<img src="imgs\s2\s2-17.png" width=550 height=600 >
+<img src="..\imgs\s2\s2-17.png" width=550 height=600 >
 
-<img src="imgs\s2\s2-18.png" width=500 height=400 >
+<img src="..\imgs\s2\s2-18.png" width=500 height=400 >
 
 ## 2.14. Embedded documents and arrays - The Theory
 
 - Embedded documents:
 
-<img src="imgs\s2\s2-19.png" width=500 height=300 >
+<img src="..\imgs\s2\s2-19.png" width=500 height=300 >
 
 - Arrays:
 
-<img src="imgs\s2\s2-20.png" width=500 height=300 >
+<img src="..\imgs\s2\s2-20.png" width=500 height=300 >
 
 ## 2.15 Working with Embedded documents
 
@@ -346,7 +346,7 @@ db.passengers.insertMany(  [
 db.flightData.updateMany({}, {$set: { status: {desc: "on-time", lastUpdt: "1h ago"} }})
 ```
 
-<img src="imgs\s2\s2-21.png" width=600 height=400 >
+<img src="..\imgs\s2\s2-21.png" width=600 height=400 >
 
 ``` javascript
 db.passengers.updateOne({name: "Albert Twostone"}, {$set: {hobbies: ["sports", "cooking"]}})
@@ -449,7 +449,7 @@ db.patients.deleteMany( { "history.disease": "cold and fever" } ) // another way
 
 ## 2.18 Wrap up
 
-<img src="imgs\s2\s2-22.png" width=600 height=300 >
+<img src="..\imgs\s2\s2-22.png" width=600 height=300 >
 
 ## 2.19 Useful resources and links
 
